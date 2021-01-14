@@ -7,8 +7,13 @@ import static org.springframework.http.HttpStatus.REQUESTED_RANGE_NOT_SATISFIABL
 
 @ResponseStatus(value= REQUESTED_RANGE_NOT_SATISFIABLE, reason="SSN is Invalid")
 public class SSNValidationException extends RuntimeException{
+
     public SSNValidationException(String message) {
           super(message);
+
+    }
+    public SSNValidationException(String message,Throwable cause) {
+        super(message,cause);
 
     }
 

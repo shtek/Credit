@@ -9,6 +9,15 @@ import org.springframework.stereotype.Component;
 public class LoanDecision {
     private int creditScore;
     private double sanctionedLoanAmmount;
+    private String message;
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
 
     public int getCreditScore() {
         return creditScore;
