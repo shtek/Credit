@@ -14,8 +14,9 @@ public class CreditScoreServiceImpl implements  CreditScoreService{
     @Override
     public int getCreditScore(String ssn) {
        Integer creditScore = restTemplate.getForObject(
-       //         "http://serviceforcreditscore" + ssn, Integer.class);
-               "http://l7q9g.mocklab.io/json/1", Integer.class);
+                "http://serviceforcreditscore" + ssn, Integer.class);
+       // using this for testing on a mock
+               //        "http://l7q9g.mocklab.io/json/1", Integer.class);
         return creditScore.intValue();
     }
 }
