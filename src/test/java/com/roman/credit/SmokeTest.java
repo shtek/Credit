@@ -9,17 +9,19 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest
 public class SmokeTest {
     @Autowired
-    private CreditDecisionEngineController controller;
-    @Autowired
     private SSNValidator validator;
-    @Test
+
+    @Autowired
+    private CreditDecisionEngineController controller;
+   @Test
     //assert that context is loaded and isnot null
     public void contextLoads() {
         assertThat(controller).isNotNull();
     }
-    @Test
+   @Test
      public void SSNValidatorLoads() {
-        assertThat(validator).isNotNull();
+      assertThat(validator).isNotNull();
+
     }
 
 }

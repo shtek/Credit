@@ -1,14 +1,22 @@
 package com.roman.credit;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+
 @Controller
 public class CreditDecisionEngineController {
-    @RequestMapping(value="/ssnNumber/{ssnNumber}/loanAmmount/{loanAmmount}")
-    public @ResponseBody String getLoanDecesion(@PathVariable("ssnNumber") String ssnNumber,@PathVariable("loanAmmount") double loanAmmount,@RequestParam("annualIncome") double annualIncome){
+    @Autowired
+    private SSNValidator validator;
+    @Autowired
+    private CreditDecisionEngineService creditDecisionEngineService;
 
-        return "str value" + ssnNumber + loanAmmount+ annualIncome;
+    @RequestMapping(value="/ssnNumber/{ssnNumber}/loanAmmount/{loanAmmount}")
+    public @ResponseBody LoanDecision getLoanDecision(@PathVariable("ssnNumber") String ssnNumber, @PathVariable("loanAmmount") double loanAmmount, @RequestParam("annualIncome") double annualIncome){
+       if(!validator.isValidSSN(ssnNumber))
+            throw new SSNValidationException("Invalid SSN provided");
+
+
+       return creditDecisionEngineService.getDecision(ssnNumber,annualIncome);
     }
+
 }
