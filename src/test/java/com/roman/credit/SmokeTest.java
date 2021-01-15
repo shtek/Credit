@@ -1,6 +1,5 @@
 package com.roman.credit;
-import org.assertj.core.api.Assert;
-import org.junit.jupiter.api.Assertions;
+import com.roman.credit.inputvalidation.SSNValidator;
 import org.junit.jupiter.api.Test;
 
 import org.springframework.beans.factory.annotation.Autowired;

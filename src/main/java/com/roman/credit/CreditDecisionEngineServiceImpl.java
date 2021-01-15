@@ -1,16 +1,11 @@
 package com.roman.credit;
 
+import com.roman.credit.history.HistoryOfSearchesService;
+import com.roman.credit.score.CreditScoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
-import org.springframework.boot.web.client.RestTemplateBuilder;
-import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
-import org.springframework.web.client.RestTemplate;
-
-import java.time.LocalDate;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 import static com.roman.credit.Constants.MAX_HISTORY_DAYS;
 import static com.roman.credit.Constants.MIN_CREDIT_SCORE;

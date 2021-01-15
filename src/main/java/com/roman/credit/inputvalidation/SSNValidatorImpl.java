@@ -1,5 +1,4 @@
-package com.roman.credit;
-import org.springframework.context.annotation.Bean;
+package com.roman.credit.inputvalidation;
 import org.springframework.stereotype.Component;
 
 import java.util.regex.*;

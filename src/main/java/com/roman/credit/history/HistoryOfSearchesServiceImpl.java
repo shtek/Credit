@@ -1,4 +1,4 @@
-package com.roman.credit;
+package com.roman.credit.history;
 
 import org.springframework.stereotype.Service;
 
@@ -9,7 +9,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import static com.roman.credit.Constants.MAX_HISTORY_DAYS;
 
 @Service
-public class HistoryOfSearchesServiceImpl implements HistoryOfSearchesService{
+public class HistoryOfSearchesServiceImpl implements HistoryOfSearchesService {
     private Map<String, LocalDate> searchesHistory = new ConcurrentHashMap<>();
 
     @Override

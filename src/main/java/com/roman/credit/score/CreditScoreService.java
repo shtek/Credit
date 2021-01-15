@@ -1,4 +1,4 @@
-package com.roman.credit;
+package com.roman.credit.score;
 
 import org.springframework.stereotype.Service;
 

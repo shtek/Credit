@@ -1,6 +1,5 @@
-package com.roman.credit;
+package com.roman.credit.inputvalidation;
 
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
 @Component
