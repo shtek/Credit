@@ -20,7 +20,7 @@ public class CreditDecisionEngineServiceTest {
     @Mock
     HistoryOfSearchesService historyOfSearchesService ;
    @Autowired
-    private CreditDecisionEngineServiceImpl creditDecisionEngineService;
+    private CreditDecisionEngineService creditDecisionEngineService;
     private static final String SSN ="123";
    @Test
     public void getDecisionDuplicateApplication() throws NoSuchFieldException {
