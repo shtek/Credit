@@ -33,12 +33,13 @@ public class CreditDecisionEngineServiceImpl implements CreditDecisionEngineServ
         if(historyOfSearchesService.wasRecentlySearched(ssn))
         {
             loanDecision.setMessage("User with this SSN " + ssn + " already applied in the past " + MAX_HISTORY_DAYS + " days");
-            return loanDecision;
+
         }
         else{
             historyOfSearchesService.updateHistory(ssn);
-            return makeDecision(creditScoreService.getCreditScore(ssn),annualIncome);
+            loanDecision =  makeDecision(creditScoreService.getCreditScore(ssn),annualIncome);
         }
+        return loanDecision;
 
     }
     private LoanDecision makeDecision(int creditScore, double annualIncome){
