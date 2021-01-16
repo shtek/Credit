@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import static com.roman.credit.Constants.MAX_HISTORY_DAYS;
-import static com.roman.credit.Constants.MIN_CREDIT_SCORE;
+import static com.roman.credit.Constants.CREDIT_SCORE_THRESHHOLD;
 
 @Service
 @Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
@@ -39,7 +39,7 @@ public class CreditDecisionEngineServiceImpl implements CreditDecisionEngineServ
     }
     private LoanDecision makeDecision(int creditScore, double annualIncome){
         loanDecision.setCreditScore(creditScore);
-        if(creditScore > MIN_CREDIT_SCORE) {
+        if(creditScore > CREDIT_SCORE_THRESHHOLD) {
             loanDecision.setSanctionedLoanAmmount(annualIncome / 2);
             loanDecision.setMessage("You have being granted loan");
         }
